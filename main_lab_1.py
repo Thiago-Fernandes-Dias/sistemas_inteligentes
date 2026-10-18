@@ -53,10 +53,10 @@ def create_table(k_results: dict[int, np.ndarray]) -> str:
 
     tb_data = []
     for k, cm in k_results.items():
-        tp = cm[0][0]
+        tp = cm[1][1]
         fp = cm[0][1]
         fn = cm[1][0]
-        tn = cm[1][1]
+        tn = cm[0][0]
         acc = acc_from_cm(cm)
         tb_data.append([k, tp, fp, fn, tn, acc])
 
